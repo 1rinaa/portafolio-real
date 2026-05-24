@@ -97,22 +97,57 @@ export const BackgroundBeams = React.memo(
           ))}
 
           <defs>
-            {pathData.map((_, i) => (
-              <linearGradient
-                key={`gradient-${i}`}
-                id={`gradient-${i}`}
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="100%"
-              >
-                <stop offset="0%" stopColor="#18CCFC" stopOpacity="0" />
-                <stop offset="20%" stopColor="#18CCFC" stopOpacity="1" />
-                <stop offset="50%" stopColor="#6344F5" stopOpacity="1" />
-                <stop offset="80%" stopColor="#AE48FF" stopOpacity="1" />
-                <stop offset="100%" stopColor="#AE48FF" stopOpacity="0" />
-              </linearGradient>
-            ))}
+            {pathData.map((_, i) => {
+              // 6 combinaciones diferentes de colores para que haya variedad
+              const scheme = i % 6;
+              
+              let colors: string[];
+              let opacities: number[];
+              
+              switch (scheme) {
+                case 0: // Blanco a rojo vino
+                  colors = ["#FFFFFF", "#D1D5DB", "#7B1026", "#4F0A1C", "#212529"];
+                  opacities = [0, 0.8, 1, 0.9, 0];
+                  break;
+                case 1: // Grises a rojo burdeos
+                  colors = ["#9CA3AF", "#212529", "#7B1026", "#96332d", "#D1D5DB"];
+                  opacities = [0, 0.7, 1, 0.8, 0];
+                  break;
+                case 2: // Rojo intenso a gris
+                  colors = ["#4F0A1C", "#8B1A2B", "#9e322d", "#9CA3AF", "#212529"];
+                  opacities = [0, 0.9, 1, 0.7, 0];
+                  break;
+                case 3: // Vino a blanco
+                  colors = ["#7B1026", "#91322d", "#a53723", "#D1D5DB", "#FFFFFF"];
+                  opacities = [0, 0.9, 0.9, 0.6, 0];
+                  break;
+                case 4: // Burdeos y grises
+                  colors = ["#212529", "#4F0A1C", "#7B1026", "#9CA3AF", "#D1D5DB"];
+                  opacities = [0, 0.8, 1, 0.6, 0];
+                  break;
+                default: // Rojo medio a gris oscuro
+                  colors = ["#992c26", "#802a1b", "#8B1A2B", "#212529", "#4F0A1C"];
+                  opacities = [0, 0.9, 0.9, 0.5, 0];
+                  break;
+              }
+              
+              return (
+                <linearGradient
+                  key={`gradient-${i}`}
+                  id={`gradient-${i}`}
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stopColor={colors[0]} stopOpacity={opacities[0]} />
+                  <stop offset="25%" stopColor={colors[1]} stopOpacity={opacities[1]} />
+                  <stop offset="50%" stopColor={colors[2]} stopOpacity={opacities[2]} />
+                  <stop offset="75%" stopColor={colors[3]} stopOpacity={opacities[3]} />
+                  <stop offset="100%" stopColor={colors[4]} stopOpacity={opacities[4]} />
+                </linearGradient>
+              );
+            })}
           </defs>
         </svg>
       </div>

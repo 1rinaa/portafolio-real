@@ -2,36 +2,36 @@
 @plugin "@tailwindcss/typography";
 
 /* --- Theme variables --- */
+/* --- Theme variables --- */
 :root {
-  /* light theme tokens */
-  --bg: #f8fafc; /* page background */
-  --surface: #ffffff; /* cards, panels */
-  --text: #0f172a; /* main text */
-  --muted: #6b7280; /* secondary text */
-  --border: #e6e9ee; /* subtle borders */
-  --brand: #6366f1; /* primary accent (indigo-500) */
-  --accent: #ec4899; /* secondary accent */
+  /* light theme tokens - tonos claros pero en gama cálida/roja */
+  --bg: #f5f0f0;        /* fondo beige claro */
+  --surface: #ffffff;    /* blanco puro */
+  --text: #2d1a1f;       /* texto rojo muy oscuro */
+  --muted: #7c5c63;      /* gris rosado/morado */
+  --border: #e8d6da;     /* borde rosa pálido */
+  --brand: #7B1026;      /* color principal - burdeos */
+  --accent: #B63B34;     /* acento - rojo medio */
 
-  /* translucent background tokens (used for panels with blur) */
-  --translucent-surface: rgba(255, 255, 255, 0.06);
-  --translucent-surface-strong: rgba(255, 255, 255, 0.12);
-  --translucent-accent: rgba(99, 102, 241, 0.06);
+  /* translucent background tokens */
+  --translucent-surface: rgba(123, 16, 38, 0.06);
+  --translucent-surface-strong: rgba(123, 16, 38, 0.12);
+  --translucent-accent: rgba(182, 59, 52, 0.06);
 }
 
 /* dark theme tokens */
 .dark {
-  --bg: #0b1220;
-  --surface: #0f1724;
-  --text: #e6edf3;
-  --muted: #9ca3af;
-  --border: #19232e;
-  --brand: #7c3aed;
-  --accent: #f472b6;
+  --bg: #1a1416;         /* fondo gris oscuro cálido */
+  --surface: #2d1a1f;    /* superficie rojo muy oscuro */
+  --text: #f0e6e8;       /* texto claro cálido */
+  --muted: #b89ca3;      /* gris rosado */
+  --border: #4a2a32;     /* borde rojo oscuro */
+  --brand: #B63B34;      /* color principal - rojo medio */
+  --accent: #7B1026;     /* acento - burdeos */
 
-  /* dark-mode translucent tokens */
-  --translucent-surface: rgba(15, 23, 36, 0.14);
-  --translucent-surface-strong: rgba(15, 23, 36, 0.22);
-  --translucent-accent: rgba(124, 58, 237, 0.1);
+  --translucent-surface: rgba(79, 10, 28, 0.14);
+  --translucent-surface-strong: rgba(79, 10, 28, 0.22);
+  --translucent-accent: rgba(182, 59, 52, 0.1);
 }
 
 /* apply defaults so non-Tailwind elements inherit colors */
